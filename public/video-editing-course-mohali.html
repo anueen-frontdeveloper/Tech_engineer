@@ -350,92 +350,113 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <div class="footer-links-columns">
-                    <ul>
-                        <li><a href="index.html" title="Home">Home</a></li>
-                        <li><a href="about.html" title="About Us">About Us</a></li>
-                        <li><a href="services.html" title="Services">Services</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="portfolio.html" title="Portfolio">Portfolio</a></li>
-                        <li><a href="blog.html" title="Blog">Blog</a></li>
-                        <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@techengineer.co">contact@techengineer.co</a>
-                </p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+918544884846">+91 085448 84846</a></p>
-                <p><i class="fas fa-map-marker-alt"></i>
-                    4th Floor, R&R Tower, Plot F-298,<br>
-                    Phase 8B, Industrial Area, Sector 74,<br>
-                    Sahibzada Ajit Singh Nagar, Punjab 160055
-                </p>
-            </div>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
 
-            <div class="footer-courses">
-                <h3>Courses</h3>
-                <ul>
-                    <li><a href="web-designing-course-mohali.html" title="Web Designing Course in Mohali/Chandigarh">Web
-                            Designing
-                            Course</a></li>
-                    <li><a href="digital-marketing-mohali.html" title="Digital Marketing in Mohali/Chandigarh">Digital
-                            Marketing</a></li>
-                    <li><a href="programming-classes-mohali.html"
-                            title="Programming Classes in Mohali/Chandigarh">Programming
-                            Classes</a></li>
-                    <li><a href="dotnet-asp-course-mohali.html" title="Asp. net">Asp.Net clases</a></li>
-                    <li><a href="graphic-design-course-mohali.html"
-                            title="Graphic Design Course in Mohali/Chandigarh">Graphic
-                            Design Course</a></li>
-                    <li><a href="video-editing-course-mohali.html"
-                            title="Video Editor Classes in Mohali/Chandiagrh">Video Editor
-                            Course</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div>
-                    <a href="https://www.facebook.com/people/TechEngineer/100083472395433/" class="social-icon"
-                        target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
+                <!-- COLUMN 1: Logo & About -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="images/logow.png" alt="Tech Engineer Logo" class="footer-logo">
                     </a>
-                    <a href="https://www.youtube.com/@TechEngineerProgramming" class="social-icon" target="_blank"
-                        aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tech-eng-ineer/" class="social-icon" target="_blank"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tech___engineer?igsh=MWgxanhqcmRxODVvYw==" class="social-icon"
-                        target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <p class="text-white-50 small mb-0">
+                        Kickstart your career with hands-on training. Building careers since 2015.
+                    </p>
                 </div>
+                
+                <!-- COLUMN 2: Quick Links (Split) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Quick Links</h5>
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="services.html">Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: Courses (Split) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Our Courses</h5>
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="web-designing-course-mohali.html">Web Design</a></li>
+                                <li><a href="programming-classes-mohali.html">Programming</a></li>
+                                <li><a href="graphic-design-course-mohali.html">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="digital-marketing-mohali.html">DigitalMarketing</a></li>
+                                <li><a href="dotnet-asp-course-mohali.html">Asp.Net</a></li>
+                                <li><a href="video-editing-course-mohali.html">Video Editior</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 4: Contact & Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Get in Touch</h5>
+
+                    <!-- Contact Info -->
+                    <ul class="footer-list contact-info mb-4">
+                        <li>
+                            <i class="fas fa-envelope footer-icon"></i>
+                            <a href="mailto:contact@techengineer.co">contact@techengineer.co</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone footer-icon"></i>
+                            <a href="tel:+918544884846">+91 85448 84846</a>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt footer-icon mt-1"></i>
+                            <span class="small">4th Floor, R&R Tower, Sector 74, Mohali, Punjab</span>
+                        </li>
+                    </ul>
+
+                    <!-- Social Icons (Placed here to fit the layout) -->
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="text-center  text-white py-3 mt-4">
-            <small>
-                &copy; 2025 Tech Engineer. All Rights Reserved. |
-                <a href="privacy-policy.html" class="text-white text-decoration-underline" target="_blank">Privacy
-                    Policy</a> |
-                <a href="terms.html" class="text-white text-decoration-underline" target="_blank">Terms & Conditions</a>
-            </small>
+        <!-- Copyright -->
+        <div class="footer-bottom mt-5 py-3 border-top border-secondary">
+            <div class="container text-center">
+                <p class="mb-0 text-white-50 small">
+                    &copy; 2025 Tech Engineer. All Rights Reserved. |
+                    <a href="privacy.html" class="text-white-50 text-decoration-none">Privacy</a> |
+                    <a href="terms.html" class="text-white-50 text-decoration-none">Terms</a>
+                </p>
+            </div>
         </div>
 
-        <!-- Floating Buttons -->
-        <button id="backToTop" onclick="scrollToTop()" title="Back to Top">&#8679;</button>
-        <button id="btn-call" onclick="clicktocall()" title="Call Us"><i class="fas fa-phone-alt"></i></button>
-        <button id="btn-wht" onclick="clicktowhatsapp()" aria-label="Chat on WhatsApp"><i
-                class="fab fa-whatsapp"></i></button>
+        <!-- Buttons -->
+        <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
+        <button id="btn-call" onclick="clicktocall()"><i class="fas fa-phone-alt"></i></button>
+        <button id="btn-wht" onclick="clicktowhatsapp()"><i class="fab fa-whatsapp"></i></button>
     </footer>
     <script>
         document.getElementById("appointmentForm").addEventListener("submit", function (e) {

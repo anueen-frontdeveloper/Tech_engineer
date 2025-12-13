@@ -5261,106 +5261,157 @@ p {
     display: inline-block;
 }
 
-/* Footer */
-footer {
-    background: #000;
+/* =========================================
+   FOOTER SECTION STYLES
+   ========================================= */
+
+/* 1. Main Footer Container */
+.footer-section {
+    background-color: #000;
+    /* Pure Black */
     color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    width: auto;
+    padding-top: 60px;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+    text-align: left;
+    /* Ensures text aligns correctly in columns */
 }
 
-footer a {
-    text-decoration: none !important;
-
-
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.footer-contact p a {
-    color: #FFF;
-    text-decoration: none;
-}
-
-.footer-social a i {
-    font-size: 30px;
-    color: #fff;
-    padding: 5%;
-    text-decoration: none !important;
-
-    transition: 0.3s;
-}
-
-.footer-social a i:hover {
-    transform: scale(1.2);
-    color: #46a1b3;
-
-}
-
-@media (max-width: 600px) {
-    .footer-links-columns {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-h3 {
+/* 2. Logo Sizing */
+.footer-logo {
+    max-width: 150px;
+    height: auto;
     margin-bottom: 15px;
 }
 
-ul {
+/* 3. Headings (Quick Links, Our Courses, etc.) */
+.footer-section h5 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 4. Lists (Links & Contact) */
+.footer-list {
     list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-ul li a {
-    color: #e8f7ff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-contact p {
-    margin: 5px 0;
-}
-
-.footer-social img {
-    width: 30px;
-    margin: 5px;
-    transition: 0.3s;
-}
-
-.footer-social img:hover {
-    transform: scale(1.1);
-}
-
-/* Link columns */
-.footer-links-columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.footer-links-columns ul {
-    list-style: none;
+    /* Removes bullets */
     padding: 0;
     margin: 0;
 }
 
-.footer-links-columns li {
-    margin-bottom: 8px;
+.footer-list li {
+    margin-bottom: 12px;
+    /* Spacing between links */
 }
 
+.footer-list a {
+    color: #ccc;
+    /* Light gray text */
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: block;
+    /* Makes the whole area clickable */
+}
+
+.footer-list a:hover {
+    color: #4e3db8;
+    /* Hover Color (Purple/Blue) */
+    padding-left: 5px;
+    /* Slide effect */
+}
+
+/* 5. Contact Icons (Envelope, Phone, Map) */
+.footer-icon {
+    color: #4e3db8;
+    width: 25px;
+    /* Fixed width ensures text aligns perfectly */
+    text-align: center;
+    margin-right: 10px;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: start;
+    /* Aligns icon with top line of text */
+    color: #ccc;
+}
+
+/* 6. Social Icons (Fixed the large size issue) */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    width: 38px;
+    /* Fixed Pixel Size - No Percentages! */
+    height: 38px;
+    background-color: #222;
+    /* Dark Gray Circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* Circle shape */
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.social-icons a:hover {
+    background-color: #4e3db8;
+    /* Brand Color on Hover */
+    transform: translateY(-3px);
+    /* Float effect */
+    color: #fff;
+}
+
+/* 7. Copyright Bar */
+.footer-bottom {
+    border-top: 1px solid #333;
+    /* Darker border line */
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #050505;
+    /* Slightly different shade */
+}
+
+.footer-bottom a {
+    color: #888;
+    transition: 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* 8. Responsive Fixes */
+@media (max-width: 768px) {
+    .footer-section {
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center icons on mobile */
+    }
+
+    .contact-info li {
+        justify-content: center;
+        /* Center contact info */
+    }
+
+    .footer-section h5 {
+        margin-top: 20px;
+        /* Add space between stacked columns */
+    }
+}
 
 /* backToTop css */
 #backToTop {
