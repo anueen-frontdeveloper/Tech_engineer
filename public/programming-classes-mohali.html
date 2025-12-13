@@ -148,189 +148,455 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Section -->
-    <section class="bg-dark text-white text-center py-5">
-        <div class="speace container">
-            <h1 class="display-5">Programming Courses in Mohali</h1>
-            <p class="lead">Kickstart your career with hands-on training in Python, Java, C++, Web Development & More!
-            </p>
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container mt-4">
+            <div class="row align-items-center">
+                <!-- Text Side -->
+                <div class="col-lg-6 hero-content">
+
+                    <h1>Become a <span style="color: #a78bfa;">Pro Developer</span> in Mohali</h1>
+                    <p class="lead text-white-10">Kickstart your career with hands-on training in Python, Java, C++, Web
+                        Development & More! 100% Practical Learning.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                            class="btn btn-light btn-lg rounded-pill fw-bold px-4">View Courses</a>
+                        <a data-bs-toggle="modal" data-bs-target="#demoModal"
+                            class="btn btn-outline-light btn-lg rounded-pill fw-bold px-4">Book Free
+                            Demo</a>
+                    </div>
+                </div>
+                <!-- Image Side -->
+                <div class="col-lg-6 text-center">
+                    <!-- Using a reliable placeholder illustration for demo -->
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-2974925-2477356.png"
+                        alt="Coding Illustration" class="img-fluid hero-img" width="500">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Our Programming Courses</h2>
+    <!-- STATS STRIP -->
+    <div class="container">
+        <div class="stats-strip">
+            <div class="row text-center">
+                <div class="col-4 border-end border-white-50">
+                    <h2 class="fw-bold mb-0">500+</h2>
+                    <small class="text-white-50">Students Trained</small>
+                </div>
+                <div class="col-4 border-end border-white-50">
+                    <h2 class="fw-bold mb-0">100%</h2>
+                    <small class="text-white-50">Placement Assist</small>
+                </div>
+                <div class="col-4">
+                    <h2 class="fw-bold mb-0">50+</h2>
+                    <small class="text-white-50">Live Projects</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COURSES SECTION -->
+    <section id="courses" class="py-5 bg-light" style="padding-top: 80px;">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase ls-2">Our Syllabus</h6>
+                <h2 class="fw-bold display-6">Our Programming Courses</h2>
+                <div class="mx-auto mt-3"
+                    style="width: 60px; height: 4px; background: var(--accent); border-radius:2px;"></div>
+            </div>
 
             <div class="row g-4">
+
                 <!-- Python -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <img src="images/python-course.webp" class="card-img-top" alt="Python Course">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/python-course.webp"
+                                onerror="this.src='https://placehold.co/600x400/4e3db8/FFF?text=Python+Course'"
+                                alt="Python Course">
+                        </div>
                         <div class="card-body">
-                            <h3 class="card-title">Python</h3>
-                            <p class="card-text">
-                                Python is one of the most in-demand and versatile programming languages. This course
-                                introduces learners to both basic and advanced Python concepts, including data types,
-                                control structures, object-oriented programming, and file handling.
-                                <br><br>
-                                You'll also work on practical modules like Django for web development, and Pandas/NumPy
-                                for data analysis. Ideal for data science, automation, and backend development careers.
+                            <span class="badge-tech">Data Science</span>
+                            <h4 class="card-title fw-bold mt-2">Python Masterclass</h4>
+                            <p class="card-text text-muted small">
+                                Learn Python, Django, NumPy & Pandas. Ideal for AI, ML & Automation projects.
                             </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Java -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <img src="images/java-training.jfif" class="card-img-top" alt="Java Training">
-                        <div class="card-body">
-                            <h3 class="card-title">Java</h3>
-                            <p class="card-text">
-                                Java is a robust, object-oriented programming language used in enterprise-level
-                                applications and Android development. Our course covers core Java fundamentals, data
-                                structures, collections, and multithreading.
-                                <br><br>
-                                You’ll also get hands-on with frameworks like Spring Boot and build REST APIs. Suitable
-                                for students, professionals, and those targeting backend or Android roles.
-                            </p>
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/java-training.jfif"
+                                onerror="this.src='https://placehold.co/600x400/fd7e14/FFF?text=Java+Training'"
+                                alt="Java Full Stack">
                         </div>
-                    </div>
-                </div>
-
-                <!-- C++ -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <img src="images/cpp-course.webp" class="card-img-top" alt="C++ Course">
                         <div class="card-body">
-                            <h3 class="card-title">C++</h3>
-                            <p class="card-text">
-                                C++ is the foundation for system-level programming, game development, and
-                                performance-intensive applications. Our C++ training covers syntax, OOPs, STL (Standard
-                                Template Library), pointers, and memory management.
-                                <br><br>
-                                You’ll also develop mini-projects that teach you how to structure scalable programs — an
-                                ideal start for those aiming at software engineering or embedded systems careers.
+                            <span class="badge-tech">Full Stack</span>
+                            <h4 class="card-title fw-bold mt-2">Java Full Stack</h4>
+                            <p class="card-text text-muted small">
+                                Master OOP, Spring Boot, Hibernate & REST APIs. Backend + enterprise development.
                             </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Web Development -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <img src="images/web-designing.webp" class="card-img-top" alt="Web Development">
-                        <div class="card-body">
-                            <h3 class="card-title">Web Development</h3>
-                            <p class="card-text">
-                                This course focuses on full-stack web development, starting from HTML, CSS, and
-                                JavaScript, to frameworks like React and backend technologies like Node.js, Express, and
-                                PHP.
-                                <br><br>
-                                You'll work on real websites and dynamic apps while learning about responsive design,
-                                hosting, and APIs. Perfect for aspiring web designers and developers.
-                            </p>
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/web-designing.webp"
+                                onerror="this.src='https://placehold.co/600x400/20c997/FFF?text=Web+Dev'"
+                                alt="Web Development Course">
                         </div>
+                        <div class="card-body">
+                            <span class="badge-tech">MERN</span>
+                            <h4 class="card-title fw-bold mt-2">Web Development</h4>
+                            <p class="card-text text-muted small">
+                                Learn HTML, CSS, JavaScript, React, Node.js & databases. Build real-world projects.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C Programming -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/c.png"
+                                onerror="this.src='https://placehold.co/600x400/0dcaf0/FFF?text=C+Programming'"
+                                alt="C Programming">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge-tech">Basics</span>
+                            <h4 class="card-title fw-bold mt-2">C Programming</h4>
+                            <p class="card-text text-muted small">
+                                Learn fundamentals, memory management & data handling. Great for beginners.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/Javascript.png"
+                                onerror="this.src='https://placehold.co/600x400/f0db4f/000?text=JavaScript'"
+                                alt="JavaScript Course">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge-tech">JavaScript</span>
+                            <span class="badge-tech">Node.js</span>
+                            <span class="badge-tech">React</span>
+
+                            <h4 class="card-title fw-bold mt-2">JavaScript Mastery</h4>
+                            <p class="card-text text-muted small">
+                                Learn modern JS, ES6+, DOM, Node.js, Express & React. Full front-end + backend skills.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C# Programming -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/cpp.jpg"
+                                onerror="this.src='https://placehold.co/600x400/6f42c1/FFF?text=Csharp'"
+                                alt="C# Programming">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge-tech">Dot NET</span>
+                            <h4 class="card-title fw-bold mt-2">C# Programming</h4>
+                            <p class="card-text text-muted small">
+                                Learn .NET, OOP, Windows apps & modern backend development.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C++ Programming -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/C++.png"
+                                onerror="this.src='https://placehold.co/600x400/0d6efd/FFF?text=C++'"
+                                alt="C++ Programming">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge-tech">System Programming</span>
+                            <h4 class="card-title fw-bold mt-2">C++ Programming</h4>
+                            <p class="card-text text-muted small">
+                                Learn OOPs, STL, pointers & memory management. Ideal for system & game dev.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML & CSS -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card course-card">
+                        <div class="course-img-wrapper">
+                            <img src="images/HTMLCSS.webp"
+                                onerror="this.src='https://placehold.co/600x400/d63384/FFF?text=HTML+CSS'"
+                                alt="HTML and CSS">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge-tech">Frontend</span>
+                            <h4 class="card-title fw-bold mt-2">HTML & CSS</h4>
+                            <p class="card-text text-muted small">
+                                Learn website structure, layouts, flexbox, animations & responsive design.
+                            </p>
+                            <a data-bs-toggle="modal" data-bs-target="#freebieModal"
+                                class="btn btn-outline-primary w-100 rounded-pill mt-2">View Syllabus</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h6 class="text-accent fw-bold text-uppercase">Our Benefits</h6>
+                <h2 class="fw-bold">Why Choose <span class="text-primary">Tech Engineer?</span></h2>
+                <p class="text-muted">We bridge the gap between academic learning and industry requirements.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Box 1 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-briefcase"></i></div>
+                        <h4 class="fw-bold">100% Placement Support</h4>
+                        <p class="text-muted small">Mock interviews, resume building, and direct connections to hiring
+                            partners to land your first job quickly.</p>
+                    </div>
+                </div>
+
+                <!-- Box 2 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-laptop-code"></i></div>
+                        <h4 class="fw-bold">Live Projects & Practice</h4>
+                        <p class="text-muted small">Don't just watch tutorials. Build real functional applications.
+                            Solve real coding problems employers demand.</p>
+                    </div>
+                </div>
+                <!-- Box 3 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-certificate"></i></div>
+                        <h4 class="fw-bold">Certified Internship</h4>
+                        <p class="text-muted small">Receive a valid experience certificate after completing your
+                            training. Collaborate with mentors in a real environment.</p>
+                    </div>
+                </div>
+                <!-- Box 4 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-chalkboard-user"></i></div>
+                        <h4 class="fw-bold">Offline Classroom</h4>
+                        <p class="text-muted small">Join interactive sessions in Mohali equipped with practical labs and
+                            personalized doubt-clearing.</p>
+                    </div>
+                </div>
+                <!-- Box 5 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-video"></i></div>
+                        <h4 class="fw-bold">Online Options</h4>
+                        <p class="text-muted small">Live instructor-led sessions, recorded videos, and chat support for
+                            smooth remote learning.</p>
+                    </div>
+                </div>
+                <!-- Box 6 -->
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-compass"></i></div>
+                        <h4 class="fw-bold">Career Guidance</h4>
+                        <p class="text-muted small">We mentor you on choosing the right path (Full Stack vs Data
+                            Science) and guide your job applications.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="row g-0"> <!-- g-0 removes space between columns -->
 
-    <!-- Why Choose Us Section -->
-    <section class="bg-light py-5">
-        <div class="container text-center">
-            <h2 class="mb-5 fw-bold">Why Choose Tech Engineer?</h2>
-            <div class="row g-5">
+                    <!-- LEFT SIDE: Blue Info Panel -->
+                    <div class="col-lg-5 modal-left">
+                        <!-- Logo Placeholder -->
+                        <div class="mb-4">
+                            <!-- Replace src with your actual logo -->
+                            <h4 class="fw-bold"><i class="bi bi-code-slash text-warning"></i> Tech Engineer</h4>
+                        </div>
 
-                <!-- Placement Support -->
-                <div class="col-md-4">
-                    <img src="images/placement-support.webp" alt="100% Placement Support"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">100% Placement Support</h3>
-                    <p class="text-muted">
-                        We provide full placement assistance to our students through mock interviews, resume building,
-                        and direct recruitment drives. Our strong industry connections help you land your first job
-                        quickly after completing the course.
-                    </p>
+                        <h5 class="fw-bold mb-4 lh-base">
+                            Delivering innovative IT strategies for real-world impact.
+                        </h5>
+
+                        <p class="small text-white-50  mb-2">You can also find us here:</p>
+                        <div class="social-icons">
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-linkedin"></i>
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Form -->
+                    <div class="col-lg-7 p-5 position-relative bg-white">
+
+                        <!-- Close Button -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <!-- Title -->
+                        <h3 class="fw-bold mb-4 text-blue-dark">
+                            Get a <span class="text-orange">Demo</span>
+                        </h3>
+
+                        <!-- Form Inputs -->
+                        <form id="demoForm">
+                            <input type="text" class="form-control" name="full_name" placeholder="Full Name*" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone Number*" required>
+
+                            <input type="text" class="form-control special-input" name="extra_info"
+                                placeholder="Description">
+
+
+
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                        </form>
+
+                    </div>
+
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Hands-on Projects -->
-                <div class="col-md-4">
-                    <img src="images/hands-on-projects.webp" alt="Live Projects Training"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">Live Projects & Real Practice</h3>
-                    <p class="text-muted">
-                        Our training is built around real-world projects to ensure you learn by doing. You'll build
-                        functional applications, solve real coding problems, and gain the kind of practical experience
-                        employers demand.
-                    </p>
-                </div>
 
-                <!-- Certified Internship -->
-                <div class="col-md-4">
-                    <img src="images/internship-certified.webp" alt="Certified Internship Training"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">Certified Internship Programs</h3>
-                    <p class="text-muted">
-                        After completing your training, you’ll receive a certified internship opportunity where you can
-                        apply your skills on live tasks, collaborate with mentors, and build confidence in a real tech
-                        environment.
-                    </p>
-                </div>
+    <!-- MODAL 2 START -->
+    <div class="modal fade" id="freebieModal" tabindex="-1" aria-labelledby="freebieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
 
-                <!-- Classroom Training -->
-                <div class="col-md-4">
-                    <img src="images/classroom-training.webp" alt="Offline Classroom Training in Mohali"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">Offline Classroom Training</h3>
-                    <p class="text-muted">
-                        Prefer face-to-face learning? Join our interactive classroom sessions in Mohali, equipped with
-                        experienced trainers, practical labs, and personalized doubt-clearing sessions.
-                    </p>
-                </div>
+                <div class="row g-0">
 
-                <!-- Online Training -->
-                <div class="col-md-4">
-                    <img src="images/online-classes.webp" alt="Online Programming Courses"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">Online Class Options</h3>
-                    <p class="text-muted">
-                        Can’t attend offline? No problem. Our online batches come with live instructor-led sessions,
-                        recorded videos, downloadable notes, and support over chat/email for smooth remote learning.
-                    </p>
-                </div>
+                    <!-- LEFT SIDE PANEL -->
+                    <div class="col-lg-5 modal-left">
+                        <h4 class="fw-bold">
+                            <i class="bi bi-code-slash text-warning"></i> Tech Engineer
+                        </h4>
 
-                <!-- Future Add-On -->
-                <div class="col-md-4">
-                    <img src="images/guarantee.webp" alt="Career Guidance & Counseling"
-                        class="img-fluid rounded mb-3" />
-                    <h3 class="fw-semibold">Career Guidance & Mentorship</h3>
-                    <p class="text-muted">
-                        We don’t just teach you code — we mentor you on choosing the right career path. From helping you
-                        decide between full-stack, data science, or backend to guiding your job applications, we’re with
-                        you all the way.
-                    </p>
+                        <h5 class="fw-bold mb-4 lh-base">
+                            Claim Your Free Course Material.
+                        </h5>
+
+                        <p class="small text-white-50 mb-2">Follow us:</p>
+                        <div class="social-icons">
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-linkedin"></i>
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE FORM -->
+                    <div class="col-lg-7 p-5 bg-white position-relative">
+
+                        <!-- Close -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                        <!-- Title -->
+                        <h3 class="fw-bold mb-4 text-blue-dark">
+                            Get Your <span class="text-orange">Skills</span>
+                        </h3>
+
+                        <!-- FORM START -->
+                        <form id="freebieForm">
+
+                            <!-- Full Name -->
+                            <div class="mb-3">
+                                <input type="text" class="form-control bg-light-gray" name="full_name"
+                                    placeholder="Full Name*" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <input type="email" class="form-control bg-light-gray" name="email" placeholder="Email*"
+                                    required>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="mb-3">
+                                <input type="tel" class="form-control bg-light-gray" name="phone"
+                                    placeholder="Phone Number*" required>
+                            </div>
+
+                            <!-- Dropdown -->
+                            <div class="mb-3">
+                                <select class="form-select bg-light-gray text-muted" name="course" required>
+                                    <option selected disabled>Select Course*</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Data Science">Data Science</option>
+
+                                    <!-- Extra courses (based on your cards) -->
+                                    <option value="Python Masterclass">Python Masterclass</option>
+                                    <option value="Java Full Stack">Java Full Stack</option>
+                                    <option value="JavaScript Mastery">JavaScript Mastery</option>
+                                    <option value="C Programming">C Programming</option>
+                                    <option value="C++ Programming">C++ Programming</option>
+                                    <option value="C# Programming">C# Programming</option>
+                                    <option value="HTML & CSS">HTML & CSS</option>
+                                </select>
+                            </div>
+
+                            <!-- Radio Buttons -->
+
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold"
+                                style="background-color:#4e3db8;border:none;">
+                                Submit
+                            </button>
+
+                        </form>
+                        <!-- FORM END -->
+
+                    </div>
                 </div>
 
             </div>
         </div>
-    </section>
-    <!-- Contact Section -->
-    <!-- Contact Form Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="text-center mb-4">Enroll or Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSc3d9isujlSSumsxlqck5DiYnBdbcWlDetYDYxbPTy1MYmOmg/viewform?embedded=true"
-                        width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
     <footer>
         <div class="container footer-container">
             <div class="footer-links">
@@ -419,6 +685,9 @@
                 class="fab fa-whatsapp"></i></button>
     </footer>
 </body>
+<!-- Bootstrap 5 JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="javascript.js" defer></script>
 
 </html>

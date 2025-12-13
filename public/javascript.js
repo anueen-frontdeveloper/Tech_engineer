@@ -251,3 +251,54 @@ function clicktowhatsapp() {
     window.location.href = "https://wa.me/918544884846";
 }
 
+fetch("states.json")
+    .then(res => res.json())
+    .then(data => {
+        const stateSelect = document.getElementById("stateSelect");
+        const citySelect = document.getElementById("citySelect");
+
+        if (stateSelect && citySelect) {
+            Object.keys(data).forEach(state => {
+                const opt = document.createElement("option");
+                opt.value = state;
+                opt.textContent = state;
+                stateSelect.appendChild(opt);
+            });
+
+            stateSelect.addEventListener("change", () => {
+                const cities = data[stateSelect.value] || [];
+                citySelect.innerHTML = "<option selected>Select City *</option>";
+                cities.forEach(city => {
+                    const opt = document.createElement("option");
+                    opt.value = city;
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            });
+        }
+
+    });
+
+
+document.getElementById("demoForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_p7eoq6c", "template_bzwdnei", this)
+        .then(function () {
+            alert("Your demo request has been submitted!");
+        }, function (error) {
+            alert("Error: " + JSON.stringify(error));
+        });
+});
+document.getElementById("freebieForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_p7eoq6c", "template_bhvibor", this)
+        .then(() => {
+            alert("Your freebie request has been sent!");
+        })
+        .catch(err => {
+            alert("Error sending message: " + JSON.stringify(err));
+        });
+});
+

@@ -35,12 +35,15 @@
     <meta name="geo.placename" content="Sahibzada Ajit Singh Nagar">
     <meta name="geo.position" content="30.7046;76.7179">
     <meta name="ICBM" content="30.7046, 76.7179">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
     <!-- Preloads -->
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="javascript.js" as="script">
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Bootstrap CSS for components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -95,117 +98,290 @@
       ]
     }
     </script>
-
     <style>
-        /* Additional styles to complement existing CSS */
-        .page-header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 60px 0 40px;
-            margin-bottom: 40px;
-            margin-top: 100px;
+        /* BASE */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
-        .page-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+        .text-purple {
+            color: #A020F0;
         }
 
-        .breadcrumb {
-            background: transparent;
-            margin-bottom: 0;
+        .heading-tight {
+            letter-spacing: -2px;
+            font-weight: 800;
         }
 
-        .breadcrumb-item a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .breadcrumb-item.active {
-            color: white;
-        }
-
-        .breadcrumb-item+.breadcrumb-item::before {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .course-content {
-            width: 100%;
-        }
-
-        .course-content h3 {
-            color: #2c3e50;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #f1f1f1;
-            padding-bottom: 10px;
-        }
-
-        .feature-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .feature-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+        /* === HERO SECTION === */
+        .hero-section {
+            background-color: #EBE0FA;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(235, 224, 250, 0) 60%);
+            min-height: 100vh;
             position: relative;
+            overflow: hidden;
+            padding-bottom: 0;
         }
 
-        .feature-list li:before {
-            content: "✓";
+        /* 1. BACKGROUND SVG SHAPE */
+        .bg-shape-container {
             position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.6;
         }
 
-        .content-image {
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+        .rotating-svg {
+            width: 100%;
+            animation: slowSpin 60s linear infinite;
         }
 
-        .rating-card {
-            background: #f8f9fa;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            border-radius: 4px;
+        @keyframes slowSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
-        .stars {
-            color: #ffc107;
-        }
-
-        .sidebar-sticky {
-            position: sticky;
-            top: 120px;
-            /* Adjusted to sit below header */
-        }
-
-        .list-group-item a {
+        /* 2. WHATSAPP BUTTON (Left Icon) */
+        .btn-whatsapp {
+            background-color: #9B51E0;
+            color: white;
+            padding: 10px 25px 10px 10px;
+            border-radius: 50px;
             text-decoration: none;
-            color: #495057;
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(155, 81, 224, 0.3);
         }
 
-        .list-group-item a:hover {
-            color: #0d6efd;
+        .btn-whatsapp:hover {
+            background-color: #8a1bc4;
+            transform: translateY(-3px);
+            color: white;
         }
 
-        .list-group-item i {
-            margin-right: 8px;
-            color: #6c757d;
+        .icon-box-left {
+            background: rgba(255, 255, 255, 0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        /* 3. ARC GALLERY */
+        .arc-container {
+            position: relative;
+            width: 100%;
+            height: 435px;
+            margin-left: 100px;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .tilt-wrapper {
+            position: relative;
+            width: 0;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.1s linear;
+        }
+
+        .arc-card {
+            position: absolute;
+            width: 220px;
+            height: 340px;
+            left: -110px;
+            top: 0;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            will-change: transform;
         }
 
         @media (max-width: 768px) {
-            .page-header {
-                padding: 40px 0 30px;
+            .arc-card {
+                position: absolute;
+                width: 170px;
+                height: 250px;
+                left: -0px;
+                overflow: hidden;
+
             }
 
-            .page-header h1 {
-                font-size: 2rem;
+            .arc-container {
+                margin-left: 50px;
+                height: 340px
             }
+        }
+
+        .arc-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .arc-card:hover {
+            border-color: #fff;
+            filter: brightness(1.1);
+        }
+
+        /* 4. BOTTOM CURVE */
+        .bottom-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .bottom-curve svg {
+            display: block;
+            width: 100%;
+            height: 180px;
+        }
+
+        /* === SECTION 2: CONTENT === */
+        .content-section {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F4EEFD 100%);
+            padding-top: 20px;
+            padding-bottom: 100px;
+            position: relative;
+            z-index: 6;
+        }
+
+        /* Video Pill */
+        .inline-video-pill {
+            display: inline-block;
+            position: relative;
+            width: 140px;
+            height: 60px;
+            vertical-align: middle;
+            border-radius: 50px;
+            overflow: hidden;
+            margin: 0 10px;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .inline-video-pill:hover {
+            transform: scale(1.05);
+        }
+
+        .inline-video-pill img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* Avatar Group */
+        .avatar-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar-group img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-left: -15px;
+            object-fit: cover;
+            transition: 0.2s;
+        }
+
+        .avatar-group img:first-child {
+            margin-left: 0;
+        }
+
+        .avatar-group img:hover {
+            transform: translateY(-5px);
+            z-index: 5;
+        }
+
+        .user-plus {
+            width: 45px;
+            height: 45px;
+            background: #eee;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: -10px;
+            z-index: 1;
+            font-size: 12px;
+        }
+
+        /* DEMO BUTTON (Right Icon, Gradient) */
+        .btn-demo {
+            background: linear-gradient(90deg, #9B51E0 0%, #7F27FF 100%);
+            color: white;
+            padding: 8px 8px 8px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(127, 39, 255, 0.4);
+            border: 3px solid white;
+            margin-top: 40px;
+            transition: transform 0.3s;
+        }
+
+        .btn-demo:hover {
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        .icon-box-right {
+            background: white;
+            color: #7F27FF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
     <!-- Google Tag Manager -->
@@ -255,277 +431,766 @@
             </ul>
         </nav>
     </header>
-    <!-- ORIGINAL HEADER END -->
+    <section class="hero-section" id="heroCtx">
 
-    <!-- Page Header -->
-    <div class="page-header">
+        <!-- 1. The Complex SVG Background (Extracted from your code) -->
+        <div class="bg-shape-container">
+            <svg class="rotating-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 742 537" fill="none">
+                <defs>
+                    <linearGradient id="grad-shape" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#40CCFC;stop-opacity:1"></stop>
+                        <stop offset="100%" style="stop-color:#1AECF5;stop-opacity:1"></stop>
+                    </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" stroke="url(#grad-shape)" stroke-width="2" fill="none"
+                    d="M283.260,131.327 C480.473,5.721 679.403,-34.777 727.584,40.872 C775.765,116.520 654.952,279.670 457.740,405.275 C260.527,530.880 61.597,571.379 13.416,495.730 C-34.765,420.081 86.048,256.933 283.260,131.327 Z">
+                </path>
+            </svg>
+        </div>
+
+        <div class="container position-relative z-3 pt-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <p class="text-secondary mb-2 fw-medium">Your Career in Design & Editing Starts Here.</p>
+                    <h1 class="display-3 fw-bolder mb-4 text-black heading-tight">
+                        Graphic Design<br>
+                        Institute Chandigarh/Mohali
+                    </h1>
+
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/918544884846" class="btn-whatsapp mb-5">
+                        <div class="icon-box-left"><i class="bi bi-whatsapp"></i></div>
+                        <span>Send WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D ARC GALLERY (JS Inserts images here) -->
+        <div class="arc-container">
+            <div class="tilt-wrapper" id="tiltWrapper"></div>
+        </div>
+
+        <!-- White Hill Transition -->
+        <div class="bottom-curve">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#ffffff"
+                    d="M0,256L60,245.3C120,235,240,213,360,192C480,171,600,149,720,149.3C840,149,960,171,1080,192C1200,213,1320,235,1380,245.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+    </section>
+
+    <!-- === SECTION 2: LEARN DESIGN === -->
+    <section class="content-section text-center">
+        <div class="container position-relative z-3">
+
+            <!-- Headline with Inline Video -->
+            <h2 class="display-3 fw-bolder text-black mb-4 heading-tight">
+                Learn
+                <span class="inline-video-pill">
+                    <img src="https://graphicsdesigninstitute.in/wp-content/uploads/2024/10/video-h1.webp" alt="Video">
+                    <div class="play-btn"><i class="bi bi-play-fill"></i></div>
+                </span>
+                Design
+                <br>
+                Edit & Success
+            </h2>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <p class="text-secondary fs-5 mb-4">
+                        Join the next generation of <strong>creators</strong> at Chandigarh’s leading institute for
+                        <strong>graphic design and video editing</strong>.
+                    </p>
+
+                    <!-- Trust Badge -->
+                    <div class="d-inline-flex flex-wrap align-items-center justify-content-center gap-3">
+                        <!-- Avatars -->
+                        <div class="avatar-group">
+                            <img src="images/tl.webp " alt="User">
+                            <img src="images/tl.webp" alt="User">
+                            <img src="images/tl.webp" alt="User">
+                            <img src="images/tl.webp" alt="User">
+                            <div class="user-plus"><i class="bi bi-plus"></i></div>
+                        </div>
+
+                        <!-- Stars & Text -->
+                        <div class="text-start">
+                            <div class="text-warning small mb-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="lh-1">
+                                <span class="fw-bold text-black small">Trusted by:</span>
+                                <span class="text-purple fw-bold small">10k+ users</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Button -->
+            <a class="btn btn-demo" class="btn demo-btn mb-2" data-bs-toggle="modal" data-bs-target="#demoModal">
+                <span>Get FREE DEMO</span>
+                <div class="icon-box-right"><i class="bi bi-arrow-right"></i></div>
+            </a>
+
+        </div>
+    </section>
+    <section class="creative-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <h1 class="fw-bold mb-3">Graphic Designing Course In Mohali</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Graphic Designing</li>
-                        </ol>
-                    </nav>
+
+            <!-- Header: Fade Right -->
+            <div class="row align-items-center mb-5 section-header">
+                <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right">
+                    <h2 class="display-6 mb-3">Courses Designed To Build Your <span class="text-highlight">Creative
+                            Future</span></h2>
+                    <p class="lead text-muted">We offer expert-led training in graphic design, video editing, and
+                        digital content creation.</p>
+                </div>
+                <!-- Button: Fade Left with Pulse -->
+                <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
+                    <a class="btn-counselling">
+                        <i class="fas fa-headset me-2"></i> 30 Mins FREE Counselling
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="row g-4">
+
+                <!-- === GRAPHIC DESIGNING === -->
+
+                <!-- Card 1: Delay 0ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="creative-card">
+                        <span class="category-badge text-graphic">Graphic Design</span>
+                        <div class="icon-wrapper bg-gen">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h4 class="card-title">Complete Graphic Designing</h4>
+                        <p class="card-text">Learn full-stack graphic design from theoretical basics to branding
+                            projects.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Delay 100ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="creative-card">
+                        <span class="category-badge text-graphic">Adobe Suite</span>
+                        <div class="icon-wrapper bg-ps"><strong>Ps</strong></div>
+                        <h4 class="card-title">Adobe Photoshop Course</h4>
+                        <p class="card-text">Master image editing, photo manipulation, and digital design composition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Delay 200ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="creative-card">
+                        <span class="category-badge text-graphic">Adobe Suite</span>
+                        <div class="icon-wrapper bg-ai"><strong>Ai</strong></div>
+                        <h4 class="card-title">Adobe Illustrator Course</h4>
+                        <p class="card-text">Create stunning vector graphics, scalable logos, and icons.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Delay 0ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="creative-card">
+                        <span class="category-badge text-graphic">Adobe Suite</span>
+                        <div class="icon-wrapper bg-id"><strong>Id</strong></div>
+                        <h4 class="card-title">Adobe InDesign Course</h4>
+                        <p class="card-text">Design professional multi-page layouts for brochures and magazines.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Delay 100ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="creative-card">
+                        <span class="category-badge text-graphic">User Interface</span>
+                        <div class="icon-wrapper bg-ui"><i class="fas fa-layer-group"></i></div>
+                        <h4 class="card-title">UI/UX Design Course</h4>
+                        <p class="card-text">Introduction to user interfaces, wireframing, and modern design tools.</p>
+                    </div>
+                </div>
+
+                <!-- === VIDEO EDITING === -->
+
+                <!-- Card 6: Delay 200ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="creative-card">
+                        <span class="category-badge text-video">Video Production</span>
+                        <div class="icon-wrapper bg-gen"><i class="fas fa-film"></i></div>
+                        <h4 class="card-title">Complete Video Editing</h4>
+                        <p class="card-text">From raw footage to final cut — learn the art of storytelling.</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Delay 0ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="creative-card">
+                        <span class="category-badge text-video">Adobe Suite</span>
+                        <div class="icon-wrapper bg-pr"><strong>Pr</strong></div>
+                        <h4 class="card-title">Adobe Premiere Pro</h4>
+                        <p class="card-text">Learn cinematic editing, smooth transitions, and color grading.</p>
+                    </div>
+                </div>
+
+                <!-- Card 8: Delay 100ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="creative-card">
+                        <span class="category-badge text-video">Adobe Suite</span>
+                        <div class="icon-wrapper bg-ae"><strong>Ae</strong></div>
+                        <h4 class="card-title">Adobe After Effects</h4>
+                        <p class="card-text">Create mind-blowing motion graphics and visual effects.</p>
+                    </div>
+                </div>
+
+                <!-- Card 9: Delay 200ms -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="creative-card">
+                        <span class="category-badge text-video">Social Media</span>
+                        <div class="icon-wrapper bg-reel"><i class="fab fa-instagram"></i></div>
+                        <h4 class="card-title">Reels & Shorts Editing</h4>
+                        <p class="card-text">Edit high-impact, fast-paced videos optimized for Instagram & YouTube.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="wcu-section">
+        <div class="container">
+
+            <!-- Animated Title -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="big-title">
+                        <span>W</span><span>h</span><span>y</span>
+                        <span>s</span><span>h</span><span>o</span><span>u</span><span>l</span><span>d</span>
+                        <span>y</span><span>o</span><span>u</span> <br>
+                        <span>c</span><span>h</span><span>o</span><span>o</span><span>s</span><span>e</span>
+                        <span>u</span><span>s</span><span>?</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- COLUMN 1: Image -->
+                <div class="col-lg-4">
+                    <div class="wcu-image-wrapper">
+                        <img src="https://graphicsdesigninstitute.in/wp-content/uploads/2024/10/bg-video-400x453.webp"
+                            alt="Creative Student">
+                    </div>
+                </div>
+
+
+                <!-- COLUMN 3: Tabs & Content -->
+                <div class="col-lg-7">
+
+                    <!-- Tab Navigation -->
+                    <div class="wcu-tabs-nav">
+                        <button class="tab-btn active" onclick="openTab('features')">Features</button>
+                        <button class="tab-btn" onclick="openTab('values')">Our Value</button>
+                    </div>
+
+                    <!-- Tab 1: Features -->
+                    <div id="features" class="tab-content-item active">
+                        <h3 class="fw-bold mb-3">Build your creative career with expert-led design training.</h3>
+                        <p class="wcu-desc">
+                            Our course is perfect for beginners who want to become professional designers and editors.
+                            You’ll learn how to create stunning visuals, edit videos, and use powerful tools to bring
+                            your ideas to life.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-list-item">Beginner friendly</div>
+                                <div class="feature-list-item">Career focused</div>
+                                <div class="feature-list-item">Cost-effective</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-list-item">Hands-on training</div>
+                                <div class="feature-list-item">Tool-based learning</div>
+                                <div class="feature-list-item">Portfolio projects</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Values -->
+                    <div id="values" class="tab-content-item">
+                        <h3 class="fw-bold mb-3">Empowering creators with skill, style & substance.</h3>
+                        <p class="wcu-desc">
+                            We believe in delivering practical, industry-ready training. Our focus is not just on
+                            software,
+                            but on mindset, quality, and real-world execution.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-list-item">Student-Centric Approach</div>
+                                <div class="feature-list-item">Creative Excellence</div>
+                                <div class="feature-list-item">Practical Learning</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-list-item">Honest Guidance</div>
+                                <div class="feature-list-item">Skill Growth Mindset</div>
+                                <div class="feature-list-item">Passionate Mentorship</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Button -->
+                    <a href="https://wa.me/918544884846" class="btn-black-icon">
+                        <i class="fab fa-whatsapp me-2"></i> Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
+        <div class="container">
+
+            <!-- Animated Title -->
+            <h2 class="faq-title">
+                <span>F</span><span>A</span><span>Q</span>
+            </h2>
+
+            <div class="row">
+
+                <!-- LEFT: Accordion List -->
+                <div class="col-lg-7">
+
+                    <!-- FAQ Item 1 -->
+                    <!-- FAQ Item 1 -->
+                    <div class="custom-accordion-item active" onclick="toggleFaq(this, 'img1')">
+                        <button class="accordion-header-btn">
+                            Where is your institute located?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            We are based at: <br>
+                            4th Floor, R&R Tower, Plot F-298, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh
+                            Nagar, Punjab 160055. <br>
+                            For more details, visit <a href="https://techengineer.co"
+                                target="_blank">techengineer.co</a>.
+                            We offer both offline and online classes. Students from nearby areas like Chandigarh,
+                            Mohali, and Panchkula also attend regularly.
+                        </div>
+                    </div>
+
+
+                    <!-- FAQ Item 2 -->
+                    <div class="custom-accordion-item" onclick="toggleFaq(this, 'img2')">
+                        <button class="accordion-header-btn">
+                            Do I need any experience before joining?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            Not at all! Our courses are designed for complete beginners. You’ll be guided step-by-step
+                            from the basics to advanced level.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="custom-accordion-item" onclick="toggleFaq(this, 'img3')">
+                        <button class="accordion-header-btn">
+                            What tools will I learn in this course?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            You’ll get hands-on training in tools like Photoshop, CorelDRAW, Illustrator, Premiere Pro,
+                            Canva, and more.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="custom-accordion-item" onclick="toggleFaq(this, 'img4')">
+                        <button class="accordion-header-btn">
+                            Do you also teach video editing?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            Yes, our course includes both graphic designing and video editing — including reels, shorts,
+                            and YouTube content.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="custom-accordion-item" onclick="toggleFaq(this, 'img5')">
+                        <button class="accordion-header-btn">
+                            Will I get to work on real projects?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            Absolutely! We provide live projects and assignments so you can build your portfolio as you
+                            learn.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="custom-accordion-item" onclick="toggleFaq(this, 'img6')">
+                        <button class="accordion-header-btn">
+                            Can I attend the course online?
+                            <div class="icon-plus"></div>
+                        </button>
+                        <div class="accordion-content">
+                            Yes! We offer fully online batches, so students from anywhere in India can join and learn
+                            from expert trainers.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT: Dynamic Images -->
+                <div class="col-lg-5">
+                    <div class="faq-image-container">
+                        <!-- Image 1 -->
+                        <img id="img1"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/img-faq1-228x112.webp"
+                            class="faq-image active" alt="Location">
+                        <!-- Image 2 -->
+                        <img id="img2"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2025/04/img-post-update1-228x112.jpg"
+                            class="faq-image" alt="Experience">
+                        <!-- Image 3 -->
+                        <img id="img3"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2025/05/DALL·E-2025-05-04-17.58.02-A-minimalist-course-thumbnail-for-Adobe-Photoshop-featuring-only-the-Ps-logo.-Use-a-soft-gradient-background-with-smooth-abstract-shapes-inspired-b-228x112.webp"
+                            class="faq-image" alt="Tools">
+                        <!-- Image 4 -->
+                        <img id="img4"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2025/05/DALL·E-2025-05-04-20.54.41-A-bold-and-artistic-thumbnail-for-an-Adobe-Premiere-Pro-course-in-the-style-of-3D-abstract-graphics-with-vibrant-elements-surrounding-the-Pr-logo.--228x112.webp"
+                            class="faq-image" alt="Video Editing">
+                        <!-- Image 5 -->
+                        <img id="img5"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2025/03/img-video-h5-228x112.jpg"
+                            class="faq-image" alt="Projects">
+                        <!-- Image 6 -->
+                        <img id="img6"
+                            src="https://graphicsdesigninstitute.in/wp-content/uploads/2024/08/bg-baner-1-228x112.webp"
+                            class="faq-image" alt="Online Class">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MODAL 2 START -->
+    <div class="modal fade" id="freebieModal" tabindex="-1" aria-labelledby="freebieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="row g-0">
+
+                    <!-- LEFT SIDE PANEL -->
+                    <div class="col-lg-5 modal-left">
+                        <h4 class="fw-bold">
+                            <i class="bi bi-code-slash text-warning"></i> Tech Engineer
+                        </h4>
+
+                        <h5 class="fw-bold mb-4 lh-base">
+                            Claim Your Free Course Material.
+                        </h5>
+
+                        <p class="small text-white-50 mb-2">Follow us:</p>
+                        <div class="social-icons">
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-linkedin"></i>
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE FORM -->
+                    <div class="col-lg-7 p-5 bg-white position-relative">
+
+                        <!-- Close -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                        <!-- Title -->
+                        <h3 class="fw-bold mb-4 text-blue-dark">
+                            Get Your <span class="text-orange">Freebie</span>
+                        </h3>
+
+                        <!-- FORM START -->
+                        <form id="freebieForm">
+
+                            <!-- Full Name -->
+                            <div class="mb-3">
+                                <input type="text" class="form-control bg-light-gray" name="full_name"
+                                    placeholder="Full Name*" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <input type="email" class="form-control bg-light-gray" name="email" placeholder="Email*"
+                                    required>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="mb-3">
+                                <input type="tel" class="form-control bg-light-gray" name="phone"
+                                    placeholder="Phone Number*" required>
+                            </div>
+
+                            <!-- Dropdown -->
+                            <div class="mb-3">
+                                <select class="form-select bg-light-gray text-muted" name="course" required>
+                                    <option selected disabled>Select Course*</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Data Science">Data Science</option>
+                                </select>
+                            </div>
+
+                            <!-- Radio Buttons -->
+                            <div class="row mt-4 mb-4">
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="radio" name="status"
+                                            value="Working Professional" style="width:20px;height:20px;" required>
+                                        <label class="form-check-label small">
+                                            Working Professional
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="radio" name="status"
+                                            value="College Student - Pursuing" style="width:20px;height:20px;">
+                                        <label class="form-check-label small">
+                                            College Student - Pursuing
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="radio" name="status"
+                                            value="College Student - Final Year" style="width:20px;height:20px;">
+                                        <label class="form-check-label small">
+                                            College Student - Final Year
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="radio" name="status" value="Others"
+                                            style="width:20px;height:20px;">
+                                        <label class="form-check-label small">
+                                            Others
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold"
+                                style="background-color:#4e3db8;border:none;">
+                                Submit
+                            </button>
+
+                        </form>
+                        <!-- FORM END -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- MODAL START -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="row g-0"> <!-- g-0 removes space between columns -->
+
+                    <!-- LEFT SIDE: Blue Info Panel -->
+                    <div class="col-lg-5 modal-left">
+                        <!-- Logo Placeholder -->
+                        <div class="mb-4">
+                            <!-- Replace src with your actual logo -->
+                            <h4 class="fw-bold"><i class="bi bi-code-slash text-warning"></i> Tech Engineer</h4>
+                        </div>
+
+                        <h5 class="fw-bold mb-4 lh-base">
+                            Delivering innovative IT strategies for real-world impact.
+                        </h5>
+
+                        <p class="small text-white-50  mb-2">You can also find us here:</p>
+                        <div class="social-icons">
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-linkedin"></i>
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Form -->
+                    <div class="col-lg-7 p-5 position-relative bg-white">
+
+                        <!-- Close Button -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <!-- Title -->
+                        <h3 class="fw-bold mb-4 text-blue-dark">
+                            Get a <span class="text-orange">Demo</span>
+                        </h3>
+
+                        <!-- Form Inputs -->
+                        <form id="demoForm">
+                            <input type="text" class="form-control" name="full_name" placeholder="Full Name*" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone Number*" required>
+
+                            <input type="text" class="form-control special-input" name="extra_info" placeholder="">
+
+                            <div class="row mt-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="profession"
+                                            value="Working Professional" required>
+                                        <label class="form-check-label small">Working Professional</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="profession"
+                                            value="College Student - Pursuing">
+                                        <label class="form-check-label small">College Student - Pursuing</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="profession"
+                                            value="College Student - Final Year">
+                                        <label class="form-check-label small">College Student - Final Year</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="profession" value="Others">
+                                        <label class="form-check-label small">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                        </form>
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
 
-    <!-- LAYOUT CONTAINER -->
-    <div class="container mb-5">
-        <!-- This single ROW holds both the Main Content and the Sidebar -->
-        <div class="row g-4">
+                <!-- COLUMN 1: Logo, About & Social -->
+                <div class="col-lg-3 col-md-12">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="images/logow.png" alt="Tech Engineer Logo" class="footer-logo">
+                    </a>
+                    <p class="text-white-50 small mb-3">
+                        Kickstart your career with hands-on training. Building careers since 2015.
+                    </p>
 
-            <!-- 1. MAIN CONTENT (Left Side on Desktop, Top on Mobile) -->
-            <main class="col-lg-8 col-md-12 course-content">
+                </div>
 
-                <!-- Mobile Only CTA -->
-                <div class="d-block d-lg-none mb-4">
-                    <div class="card bg-light border-primary">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Start Your Career Today</h5>
-                            <a href="contact.html" class="btn btn-primary w-100">Book Free Demo</a>
+                <!-- COLUMN 2: Quick Links (Split into 2 Columns) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Quick Links</h5>
+                    <div class="row g-0">
+                        <!-- Left Side -->
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Right Side -->
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="services.html">Services</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Main Image -->
-                <img src="images/graphics.jpg" class="img-fluid content-image w-100"
-                    alt="Join the Graphic Designing Course in Mohali at Tech Engineer">
-
-                <p class="lead">Are you passionate about visual communication and creativity? And you are searching
-                    for a <strong>Graphic Designing Course In Mohali</strong>? If so, Tech Engineer in Mohali has
-                    the
-                    perfect solution for you.</p>
-
-                <p>Our comprehensive Graphic Designing Course is designed to help you bring your creative vision to
-                    life. Whether you're a beginner or someone looking to sharpen your skills, this course is
-                    tailored to help you excel in the dynamic world of Graphic design.</p>
-
-                <h2>Why You Need to Learn Graphic Design?</h2>
-                <p>In today's digital age, visual communication is more important than ever. Businesses rely heavily
-                    on strong visual content for branding, advertising, and online presence. Learning graphic design
-                    equips you with the skills to create eye-catching visuals that effectively communicate ideas.
-                </p>
-
-                <h2>Why Choose Tech Engineer for Graphic Designing?</h2>
-                <ul>
-                    <li><strong>Expert Trainers:</strong> Extensive knowledge and mentorship to develop a creative
-                        mindset.</li>
-                    <li><strong>Comprehensive Curriculum:</strong> Covers everything from basics to advanced
-                        techniques.</li>
-                    <li><strong>Practical Learning:</strong> Hands-on projects in real-time.</li>
-                    <li><strong>Industry-Relevant Tools:</strong> Adobe Photoshop, Figma, and Canva.</li>
-                    <li><strong>100% Job Guarantee:</strong> We offer a 100% job guarantee to help you secure a
-                        position.</li>
-                    <li><strong>Certification:</strong> Industry-recognized certification upon completion.</li>
-                </ul>
-
-                <h2>What Will You Learn?</h2>
-                <p>Our Graphic Designing Course covers all aspects of graphic design:</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="feature-list">
-                            <li><strong>Logo Design:</strong> Create visually striking identities.</li>
-                            <li><strong>Brochure Design:</strong> Balance text and images effectively.</li>
-                            <li><strong>Stationery Design:</strong> Business cards and letterheads.</li>
-                            <li><strong>Photoshop Mastery:</strong> From editing to digital painting.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="feature-list">
-                            <li><strong>Figma for UI/UX:</strong> Wireframes and prototypes.</li>
-                            <li><strong>Canva:</strong> Quick solutions for social media.</li>
-                            <li><strong>Animation Basics:</strong> Add motion to your designs.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <img src="images/graphic-designing-course.webp" class="img-fluid content-image w-100 mt-3"
-                    alt="Graphic Designing Course illustration for students in Mohali">
-
-                <h2>Course Duration and Structure</h2>
-                <p>The Graphic Designing Course at Tech Engineer is a <strong>3-month intensive program</strong>.
-                    You will be immersed in the world of design, learning both theoretical concepts and practical
-                    skills
-                    through various modules.</p>
-
-                <div class="alert alert-info mt-4">
-                    <h5><i class="fas fa-briefcase me-2"></i> 100% Job Guarantee</h5>
-                    <p class="mb-0">We are committed to helping you kickstart your career. With our extensive
-                        network,
-                        we ensure you get the best opportunities available.</p>
-                </div>
-
-                <h2>Advanced Courses</h2>
-                <p>We offer a variety of additional courses including
-                    <a href="dotnet-asp-course-mohali.html">Asp.net</a>,
-                    <a href="web-designing-course-mohali.html">Web Designing</a>,
-                    <a href="video-editing-course-mohali.html">Video editing</a>,
-                    <a href="#">Web Development</a>,
-                    <a href="digital-marketing-mohali.html">Digital Marketing</a>, and
-                    <a href="programming-classes-mohali.html">Programming</a>.
-                </p>
-
-                <hr class="my-5">
-
-                <!-- FAQ Section -->
-                <h2 class="mb-4">Frequently Asked Questions (FAQs)</h2>
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne">
-                                How long does it take to complete the course?
-                            </button>
-                        </h3>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                The Graphic Designing Course at Tech Engineer is a 3-month intensive program.
-                            </div>
+                <!-- COLUMN 3: Courses (Split into 2 Columns) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Our Courses</h5>
+                    <div class="row g-0">
+                        <!-- Left Side -->
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Programming</a></li>
+                                <li><a href="#">Graphic</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo">
-                                What qualifications are required?
-                            </button>
-                        </h3>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Students must have passed the senior secondary school examination (10+2) or
-                                equivalent qualification.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree">
-                                Is there placement assistance?
-                            </button>
-                        </h3>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Yes, we provide 100% placement assistance and have a dedicated placement cell to
-                                help students connect with job opportunities.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour">
-                                Can I take the course part-time?
-                            </button>
-                        </h3>
-                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Yes, we provide flexible timings, including evening and weekend batches for students
-                                and working professionals.
-                            </div>
+                        <!-- Right Side -->
+                        <div class="col-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Marketing</a></li>
+                                <li><a href="#">Asp.Net</a></li>
+                                <li><a href="#">Video Edit</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-
-
-            </main>
-
-
-        </div>
-    </div>
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <div class="footer-links-columns">
-                    <ul>
-                        <li><a href="index.html" title="Home">Home</a></li>
-                        <li><a href="about.html" title="About Us">About Us</a></li>
-                        <li><a href="services.html" title="Services">Services</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="portfolio.html" title="Portfolio">Portfolio</a></li>
-                        <li><a href="blog.html" title="Blog">Blog</a></li>
-                        <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
+                <!-- COLUMN 4: Contact Info -->
+                <div class="col-lg-3 col-md-12">
+                    <h5 class="text-white fw-bold mb-3">Contact Us</h5>
+                    <ul class="footer-list contact-info">
+                        <li>
+                            <i class="fas fa-envelope  me-2"></i>
+                            <a href="mailto:contact@techengineer.co">contact@techengineer.co</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone  me-2"></i>
+                            <a href="tel:+918544884846">+91 85448 84846</a>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt  me-2 mt-1"></i>
+                            <span class="small">4th Floor, R&R Tower, Sector 74, Mohali, Punjab</span>
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@techengineer.co">contact@techengineer.co</a>
-                </p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+918544884846">+91 085448 84846</a></p>
-                <p><i class="fas fa-map-marker-alt"></i>
-                    4th Floor, R&R Tower, Plot F-298,<br>
-                    Phase 8B, Industrial Area, Sector 74,<br>
-                    Sahibzada Ajit Singh Nagar, Punjab 160055
-                </p>
-            </div>
 
-            <div class="footer-courses">
-                <h3>Courses</h3>
-                <ul>
-                    <li><a href="web-designing-course-mohali.html" title="Web Designing Course in Mohali/Chandigarh">Web
-                            Designing
-                            Course</a></li>
-                    <li><a href="digital-marketing-mohali.html" title="Digital Marketing in Mohali/Chandigarh">Digital
-                            Marketing</a></li>
-                    <li><a href="programming-classes-mohali.html"
-                            title="Programming Classes in Mohali/Chandigarh">Programming
-                            Classes</a></li>
-                    <li><a href="dotnet-asp-course-mohali.html" title="Asp. net">Asp.Net clases</a></li>
-                    <li><a href="graphic-design-course-mohali.html"
-                            title="Graphic Design Course in Mohali/Chandigarh">Graphic
-                            Design Course</a></li>
-                    <li><a href="video-editing-course-mohali.html"
-                            title="Video Editor Classes in Mohali/Chandiagrh">Video Editor
-                            Course</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div>
-                    <a href="https://www.facebook.com/people/TechEngineer/100083472395433/" class="social-icon"
-                        target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@TechEngineerProgramming" class="social-icon" target="_blank"
-                        aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tech-eng-ineer/" class="social-icon" target="_blank"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tech___engineer?igsh=MWgxanhqcmRxODVvYw==" class="social-icon"
-                        target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
             </div>
         </div>
 
-        <div class="text-center  text-white py-3 mt-4">
-            <small>
-                &copy; 2025 Tech Engineer. All Rights Reserved. |
-                <a href="privacy-policy.html" class="text-white text-decoration-underline" target="_blank">Privacy
-                    Policy</a> |
-                <a href="terms.html" class="text-white text-decoration-underline" target="_blank">Terms & Conditions</a>
-            </small>
+        <!-- Copyright B    ar -->
+        <div class="footer-bottom mt-5 py-3 border-top border-secondary">
+            <div class="container text-center">
+                <p class=" text-white-50 small">
+                    &copy; 2025 Tech Engineer. All Rights Reserved. |
+                    <a href="privacy.html" class="text-white-50 text-decoration-none">Privacy</a> |
+                    <a href="terms.html" class="text-white-50 text-decoration-none">Terms</a>
+                </p>
+            </div>
         </div>
 
-        <!-- Floating Buttons -->
-        <button id="backToTop" onclick="scrollToTop()" title="Back to Top">&#8679;</button>
-        <button id="btn-call" onclick="clicktocall()" title="Call Us"><i class="fas fa-phone-alt"></i></button>
-        <button id="btn-wht" onclick="clicktowhatsapp()" aria-label="Chat on WhatsApp"><i
-                class="fab fa-whatsapp"></i></button>
+        <!-- Buttons -->
+        <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
+        <button id="btn-call" onclick="clicktocall()"><i class="fas fa-phone-alt"></i></button>
+        <button id="btn-wht" onclick="clicktowhatsapp()"><i class="fab fa-whatsapp"></i></button>
     </footer>
     <!-- ORIGINAL FOOTER END -->
 
@@ -533,29 +1198,159 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Basic JS to prevent console errors since specific elements might be missing
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById("contactForm");
-            if (contactForm) {
-                contactForm.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    const formData = new FormData(this);
-                    fetch("https://script.google.com/macros/s/AKfycbw3YgpOYhHj7RFPoYvjXm5ekDc5a1J1jD4Gp7CJns30W1aASVG_5BNfZNddBTmHbadO/exec", {
-                        method: "POST",
-                        body: formData
-                    }).then(res => res.text()).then(() => {
-                        alert("Thank you! Your message has been sent.");
-                        this.reset();
-                    }).catch(() => {
-                        alert("Error! Please try again.");
-                    });
-                });
+
+        const tiltWrapper = document.getElementById('tiltWrapper');
+        const hero = document.getElementById('heroCtx');
+
+        const images = [
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-8-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-7-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-6-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-5-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/project-img4-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-2-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-1-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-10-356x396.webp",
+            "https://graphicsdesigninstitute.in/wp-content/uploads/2024/09/gallery-page-img-9-356x396.webp"
+        ];
+
+        // Double array for seamless loop
+        const allImages = [...images, ...images];
+
+        const cardGap = 220;
+        const totalWidth = allImages.length * cardGap;
+
+        let cards = [];
+        let offset = 0;
+        let speed = 1.0;
+        let targetSpeed = 1.0;
+        let isHovering = false;
+
+        // 2. BUILD CARDS
+        allImages.forEach((url, i) => {
+            const card = document.createElement('div');
+            card.className = 'arc-card';
+            const img = document.createElement('img');
+            img.src = url;
+            card.appendChild(img);
+
+            // Events
+            card.addEventListener('mouseenter', () => { isHovering = true; });
+            card.addEventListener('mouseleave', () => { isHovering = false; });
+            card.addEventListener('click', () => {
+                targetSpeed = 25;
+                setTimeout(() => { targetSpeed = 1.0; }, 600);
+            });
+
+            tiltWrapper.appendChild(card);
+            cards.push({ element: card, initialIndex: i });
+        });
+
+        // 3. ANIMATION LOOP (The Curve)
+        function animate() {
+            if (isHovering && targetSpeed === 1.0) {
+                speed += (0 - speed) * 0.1;
+            } else {
+                speed += (targetSpeed - speed) * 0.05;
             }
+
+            offset -= speed;
+            if (offset <= -totalWidth) offset += totalWidth;
+
+            cards.forEach((item, index) => {
+                let x = (index * cardGap) + offset;
+                let displayX = x;
+
+                // Wrap logic
+                while (displayX < -window.innerWidth) displayX += totalWidth;
+                while (displayX > totalWidth - window.innerWidth) displayX -= totalWidth;
+
+                // MATH FOR CURVE
+                const dist = displayX + 200;
+                const rotateZ = dist * 0.04;
+                const absDist = Math.abs(dist);
+                const translateY = (absDist * absDist) / 5000 + 30; // The Arc Hill
+                const zIndex = 1000 - Math.floor(absDist);
+
+                item.element.style.transform = `translateX(${displayX}px) translateY(${translateY}px) rotateZ(${rotateZ}deg)`;
+                item.element.style.zIndex = zIndex;
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // 4. MOUSE TILT
+        hero.addEventListener('mousemove', (e) => {
+            const rotX = -(e.clientY - window.innerHeight / 2) / 40;
+            const rotY = (e.clientX - window.innerWidth / 2) / 40;
+            tiltWrapper.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        });
+        hero.addEventListener('mouseleave', () => {
+            tiltWrapper.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+        function openTab(tabId) {
+            // 1. Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content-item');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 2. Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Show specific tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // 4. Set active class on the clicked button
+            // Find the button that was clicked based on text content logic or passed event
+            // Simpler approach for this specific layout:
+            if (tabId === 'features') {
+                buttons[0].classList.add('active');
+            } else {
+                buttons[1].classList.add('active');
+            }
+        }
+        function toggleFaq(element, imgId) {
+            // Toggle active class for accordion content
+            const isActive = element.classList.contains('active');
+
+            // Close all items first
+            document.querySelectorAll('.custom-accordion-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                element.classList.add('active');
+                const content = element.querySelector('.accordion-content');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+
+            // Handle FAQ images
+            document.querySelectorAll('.faq-image').forEach(img => img.classList.remove('active'));
+            document.getElementById(imgId).classList.add('active');
+        }
+
+        // Initialize maxHeight for first active item
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstItem = document.querySelector('.custom-accordion-item.active .accordion-content');
+            if (firstItem) firstItem.style.maxHeight = firstItem.scrollHeight + "px";
+        });
+
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,  // Animation duration in milliseconds
+            once: true,     // Animation happens only once while scrolling down
+            offset: 100     // Offset (in px) from the original trigger point
         });
     </script>
-
     <script src="javascript.js" defer></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("DwG33yhORBOq2RRS0"); // Get from EmailJS Dashboard
+    </script>
 </body>
 
 </html>
