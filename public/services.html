@@ -25,12 +25,10 @@
 
     <link rel="canonical" href="https://techengineer.co/services.html">
 
-    <!-- ✅ Favicons (Enhanced compatibility) -->
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/icon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- ✅ Performance: Preload Critical Assets -->
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="style.css">
@@ -56,7 +54,6 @@
     <meta name="twitter:image" content="https://techengineer.co/images/logo.webp">
 
 
-    <!-- ✅ Structured Data: Organization + Breadcrumb + Service List -->
     <script type="application/ld+json">
     [
         {
@@ -147,8 +144,96 @@
         }
     ]
     </script>
+    <style>
+        /* Card Container */
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-    <!-- Google Tag Manager -->
+        /* Hover Effect: Lift and Shadow */
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        /* Icon Wrapper Styling */
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Icon Animation on Hover */
+        .service-card:hover .icon-wrapper {
+            transform: rotateY(360deg);
+        }
+
+        /* Unique Colors for Icons */
+        .bg-blue {
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+        }
+
+        .bg-purple {
+            background: rgba(111, 66, 193, 0.1);
+            color: #6f42c1;
+        }
+
+        .bg-orange {
+            background: rgba(253, 126, 20, 0.1);
+            color: #fd7e14;
+        }
+
+        .bg-green {
+            background: rgba(25, 135, 84, 0.1);
+            color: #198754;
+        }
+
+        .bg-red {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+
+        .bg-cyan {
+            background: rgba(13, 202, 240, 0.1);
+            color: #0dcaf0;
+        }
+
+        /* Link Styling */
+        .service-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: #0d6efd;
+            transition: 0.3s;
+        }
+
+        .service-link:hover {
+            color: #0a58ca;
+        }
+
+        .service-link i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Move Arrow on Hover */
+        .service-card:hover .service-link i {
+            transform: translateX(5px);
+        }
+    </style>
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
@@ -157,15 +242,12 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-KPZ2FD2T');</script>
-    <!-- End Google Tag Manager -->
 </head>
 
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPZ2FD2T" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="header">
         <nav class="container nav-wrapper">
             <a href="index.html" class="logo">
@@ -202,147 +284,182 @@
                 operations, and deliver measurable results.</p>
         </div>
     </section>
-    <section class="ourservice">
+    <section class="service-section py-5 bg-light">
         <div class="container">
-            <div class="service-header">
-                <h2>What We <span>Offer</span></h2>
-                <p>Discover our range of comprehensive IT solutions tailored to your needs</p>
-            </div>
-            <div class="service-grid">
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Designing Course</h3>
-                    <p>Learn professional web designing with HTML, CSS, JS, and responsive design.</p>
-                    <a href="web-designing-course-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Master SEO, social media marketing, PPC ads, and complete digital strategies.</p>
-                    <a href="digital-marketing-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming Classes</h3>
-                    <p>Hands-on training in top programming languages for beginners & professionals.</p>
-                    <a href="programming-classes-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Asp.Net Classes</h3>
-                    <p>Learn ASP.NET development with real-world projects and practical training.</p>
-                    <a href="dotnet-asp-course-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Graphic Design Course</h3>
-                    <p>Professional graphic designing training with Photoshop, Illustrator & CorelDRAW.</p>
-                    <a href="graphic-design-course-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Video Editor Course</h3>
-                    <p>Learn advanced video editing with Premiere Pro, After Effects & more.</p>
-                    <a href="video-editing-course-mohali.html" class="service-link">Learn More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill fw-bold">WHAT WE
+                    OFFER</span>
+                <h2 class="display-5 fw-bold text-dark">Our Comprehensive <span class="text-primary">IT Services</span>
+                </h2>
+                <p class="text-muted lead mx-auto" style="max-width: 600px;">
+                    Discover our range of professional IT solutions tailored to streamline operations and drive growth.
+                </p>
             </div>
 
+            <!-- Grid -->
+            <div class="row g-4">
+
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-blue">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Software Development</h3>
+                        <p class="text-muted mb-4">Custom software solutions designed to streamline your business
+                            operations and enhance productivity.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-purple">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Cloud Services</h3>
+                        <p class="text-muted mb-4">Secure and scalable cloud solutions to help your business stay agile
+                            and competitive in the digital age.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-orange">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Cybersecurity</h3>
+                        <p class="text-muted mb-4">Comprehensive security solutions to protect your data and
+                            infrastructure from modern cyber threats.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-green">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Network Solutions</h3>
+                        <p class="text-muted mb-4">Reliable networking infrastructure to keep your business connected
+                            and efficient 24/7.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-red">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Data Management</h3>
+                        <p class="text-muted mb-4">Efficient data storage and management solutions for your growing
+                            business intelligence needs.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper bg-cyan">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">IT Support</h3>
+                        <p class="text-muted mb-4">Dedicated technical support to ensure your systems run smoothly and
+                            efficiently without downtime.</p>
+                        <a href="#" class="service-link stretched-link">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
+
     <section class="process-section">
-        <div class="container">
-            <div class="process-header">
-                <h2>Our <span>Learning Journey</span></h2>
-                <!-- Optional: Added subtext to explain the change -->
-                <p>From enrollment to placement, here is how we build your career</p>
+        <div class="container position-relative">
+
+            <!-- Header -->
+            <div class="text-center mb-5 process-header">
+                <h2 class="display-5">Our <span class="text-highlight">Learning Journey</span></h2>
+                <p class="text-muted lead">From enrollment to placement, here is how we build your career</p>
             </div>
+
+            <!-- SVG CURVED PATH (Background) -->
+            <!-- This SVG creates the wave line connecting the dots -->
+            <svg class="path-container d-none d-lg-block" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                <path class="dashed-path" d="M50,100 C250,0 350,160, 550,50 C750,0 850,100 1150,50" fill="none"
+                    stroke="#cbd5e1" stroke-width="3" stroke-dasharray="10,10" />
+            </svg>
+
+            <!-- Steps Container -->
             <div class="process-flow">
+
+                <!-- Step 1 -->
                 <div class="process-step">
                     <div class="step-icon orange">
-                        <!-- Changed to Comments/User interaction icon -->
                         <i class="fas fa-comments"></i>
                     </div>
-                    <div class="step-line"></div>
-                    <!-- Step 1 -->
-                    <h3>Counseling & Demo</h3>
+                    <h3 class="step-title">Counseling</h3>
                 </div>
 
+                <!-- Step 2 (Pushed Down by CSS) -->
                 <div class="process-step">
                     <div class="step-icon pink">
-                        <!-- Changed to Clipboard/Registration icon -->
                         <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <div class="step-line"></div>
-                    <!-- Step 2 -->
-                    <h3>Enrollment</h3>
+                    <h3 class="step-title">Enrollment</h3>
                 </div>
 
+                <!-- Step 3 -->
                 <div class="process-step">
                     <div class="step-icon blue">
-                        <!-- Changed to Teaching/Laptop icon -->
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <div class="step-line"></div>
-                    <!-- Step 3 -->
-                    <h3>Practical Training</h3>
+                    <h3 class="step-title">Training</h3>
                 </div>
 
+                <!-- Step 4 (Pushed Down) -->
                 <div class="process-step">
                     <div class="step-icon purple">
-                        <!-- Changed to Code/Project icon -->
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <div class="step-line"></div>
-                    <!-- Step 4 -->
-                    <h3>Live Projects</h3>
+                    <h3 class="step-title">Live Projects</h3>
                 </div>
 
+                <!-- Step 5 -->
                 <div class="process-step">
                     <div class="step-icon magenta">
-                        <!-- Changed to Certificate/Award icon -->
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <div class="step-line"></div>
-                    <!-- Step 5 -->
-                    <h3>Certification</h3>
+                    <h3 class="step-title">Certification</h3>
                 </div>
 
+                <!-- Step 6 (Pushed Down) -->
                 <div class="process-step">
                     <div class="step-icon green">
-                        <!-- Changed to Briefcase/Job icon -->
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <!-- Step 6 -->
-                    <h3>Placement Support</h3>
+                    <h3 class="step-title">Placement</h3>
                 </div>
+
             </div>
         </div>
     </section>
+
     <section class="cta-section">
         <div class="container" style="padding: 0px;">
             <div class="cta-content">
@@ -362,7 +479,6 @@
         <div class="container">
             <div class="row g-4">
 
-                <!-- COLUMN 1: Logo & About -->
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html" class="d-inline-block mb-3">
                         <img src="images/logow.png" alt="Tech Engineer Logo" class="footer-logo">
@@ -370,7 +486,6 @@
 
                 </div>
 
-                <!-- COLUMN 2: Quick Links (Split) -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-3">Quick Links</h5>
                     <div class="row g-0">
@@ -391,7 +506,6 @@
                     </div>
                 </div>
 
-                <!-- COLUMN 3: Courses (Split) -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-3">Our Courses</h5>
                     <div class="row g-0">
@@ -412,11 +526,9 @@
                     </div>
                 </div>
 
-                <!-- COLUMN 4: Contact & Social -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-3">Get in Touch</h5>
 
-                    <!-- Contact Info -->
                     <ul class="footer-list contact-info mb-4">
                         <li>
                             <i class="fas fa-envelope footer-icon"></i>
@@ -432,15 +544,14 @@
                         </li>
                     </ul>
 
-                    <!-- Social Icons (Placed here to fit the layout) -->
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i
+                        <a href="http://www.facebook.com/people/TechEngineer/100083472395433/" target="_blank" aria-label="Facebook"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i
+                        <a href="http://www.youtube.com/@TechEngineerProgramming" target="_blank" aria-label="YouTube"><i
                                 class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i
+                        <a href="http://www.linkedin.com/company/tech-eng-ineer/" target="_blank" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                        <a href="http://www.instagram.com/tech___engineer" target="_blank" aria-label="Instagram"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -448,7 +559,6 @@
             </div>
         </div>
 
-        <!-- Copyright -->
         <div class="footer-bottom mt-5 py-3 border-top border-secondary">
             <div class="container text-center">
                 <p class="mb-0 text-white-50 small">
@@ -459,7 +569,6 @@
             </div>
         </div>
 
-        <!-- Buttons -->
         <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
         <button id="btn-call" onclick="clicktocall()"><i class="fas fa-phone-alt"></i></button>
         <button id="btn-wht" onclick="clicktowhatsapp()"><i class="fab fa-whatsapp"></i></button>
