@@ -955,10 +955,24 @@ nav a:hover::after {
     text-decoration: none;
 }
 
+.internship a {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    color: #004085 !important;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .internship:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     background-color: #e9ecef;
+    border-radius: 25px;
+
+
 }
 
 .internship img {
@@ -970,16 +984,7 @@ nav a:hover::after {
     color: #004085;
 }
 
-.internship a {
-    display: flex;
-    align-items: center;
-    background: #f8f9fa;
-    color: #004085;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 .logo img {
     height: 60px;
