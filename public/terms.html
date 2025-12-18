@@ -12,6 +12,7 @@
     <!-- Meta Description (155–160 chars) -->
     <meta name="description"
         content="Read the Terms & Conditions for Tech Engineer, an IT company in Mohali offering web development, mobile apps, digital marketing, and cloud solutions.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Keywords (for reference, not ranking factor but helps consistency) -->
     <meta name="keywords"
@@ -42,7 +43,183 @@
     <meta name="twitter:title" content="Terms & Conditions | Tech Engineer">
     <meta name="twitter:description" content="Rules and policies for using our website and services.">
     <meta name="twitter:image" content="https://techengineer.co/images/logo.webp">
+    <style>
+        /* --- Google Fonts (Optional but recommended) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
+        /* --- General Layout --- */
+        .terms-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            margin-top: 100px;
+
+            padding: 0 20px;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Left Column: Main Content --- */
+        .terms-content {
+            flex: 2;
+            /* Takes up 2/3rds of space */
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            /* Soft shadow for depth */
+            min-width: 300px;
+        }
+
+        /* Typography for Main Content */
+        .terms-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #46a1b3;
+            /* Brand color accent */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .terms-content h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #46a1b3;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .terms-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .terms-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .terms-content ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Custom bullet points */
+        .terms-content ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #46a1b3;
+            font-weight: bold;
+        }
+
+        /* Specific Section Styling */
+        .refund-policy {
+            background: #f9fbfb;
+            /* Very light teal bg */
+            padding: 20px;
+            border-left: 4px solid #46a1b3;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .contact-us address {
+            font-style: normal;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* --- Right Column: Sidebar --- */
+        .terms-sidebar {
+            flex: 1;
+            /* Takes up 1/3rd of space */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 280px;
+        }
+
+        /* Sidebar Widgets */
+        .terms-sidebar section {
+            background: #fff;
+            padding: 25px;
+            margin-top: 50px;
+
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #46a1b3;
+            /* Colored top border */
+        }
+
+        /* Sticky effect for Sidebar */
+        .terms-sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .terms-sidebar h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .news-events ul {
+            padding-left: 20px;
+        }
+
+        .news-events li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* Gallery & Partners Images */
+        .photo-gallery img,
+        .partners img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .terms-container {
+                flex-direction: column;
+                /* Stack them vertically on mobile */
+            }
+
+            .terms-content,
+            .terms-sidebar {
+                flex: auto;
+                width: 100%;
+            }
+
+            .terms-content {
+                padding: 20px;
+                /* Less padding on mobile */
+            }
+        }
+    </style>
     <!-- WebPage Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -59,67 +236,6 @@
       }
     }
     </script>
-    <style>
-        .terms-container {
-            display: flex;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-
-        .terms-content {
-            flex: 2;
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .terms-sidebar {
-            flex: 1;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .terms-content section,
-        .terms-sidebar section {
-            margin-bottom: 25px;
-            margin-top: 90px;
-
-        }
-
-        .terms-content h2 {
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .terms-sidebar h3 {
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .terms-sidebar img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* Responsive */
-        @media(max-width: 900px) {
-            .terms-container {
-                flex-direction: column;
-            }
-
-            .terms-content,
-            .terms-sidebar {
-                max-height: none;
-            }
-        }
-    </style>
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -161,7 +277,7 @@
 
                 <li class="internship">
                     <a href="https://industrialtraining.codebank.in/">
-                                                <img src="images/icon.webp" alt="Internship" loading="lazy">
+                        <img src="images/icon.webp" alt="Internship" loading="lazy">
                         <span>Internship</span>
                     </a>
                 </li>
@@ -169,73 +285,102 @@
         </nav>
     </header>
     <div class="terms-container">
+        <!-- Left Column: Main Rules Content -->
         <div class="terms-content">
             <section class="introduction">
-                <h1>Introduction to our company terms</h1>
-                <p>Welcome to Tech Engineer Mohali. By using our website and services, you agree to our policies
-                    outlined below.</p>
+                <h1>ITI & Industrial Training Rules</h1>
+                <p>Welcome to <strong>Tech Engineer Mohali</strong>. To ensure a professional learning environment and
+                    successful certification, all trainees must adhere to the following rules and regulations.</p>
             </section>
 
-            <section class="definitions">
-                <h2>Definitions</h2>
+            <!-- 1. Attendance Policy -->
+            <section class="attendance-policy">
+                <h2>1. Attendance & Punctuality</h2>
+                <p>Discipline is the key to technical expertise. We strictly monitor attendance logs.</p>
                 <ul>
-                    <li><strong>Company:</strong> Tech Engineer (We / Us / Our)</li>
-                    <li><strong>Service:</strong> IT services, training programs, digital products, software
-                        development.</li>
-                    <li><strong>You:</strong> The user accessing our services or website.</li>
+                    <li><strong>Minimum Attendance:</strong> 85% attendance is mandatory to be eligible for the final
+                        certification and project submission.</li>
+                    <li><strong>Timings:</strong> Trainees must reach the lab 10 minutes before the scheduled batch
+                        time. Late entry beyond 15 minutes is not permitted.</li>
+                    <li><strong>Leave Policy:</strong> Leaves are only approved via written application signed by the
+                        instructor. Uninformed leave for more than 3 days leads to batch suspension.</li>
                 </ul>
             </section>
 
+            <!-- 2. Lab & Equipment Rules -->
+            <section class="lab-rules">
+                <h2>2. Lab Code of Conduct</h2>
+                <ul>
+                    <li><strong>ID Cards:</strong> Wearing the institute ID card is mandatory within the premises.</li>
+                    <li><strong>Equipment Safety:</strong> Students are responsible for the system/laptop assigned to
+                        them. Any hardware damage will be penalized.</li>
+                    <li><strong>Mobile Phones:</strong> Phones must be on silent mode. usage of social media or gaming
+                        during lab hours is strictly prohibited.</li>
+                    <li><strong>Cleanliness:</strong> Food and drinks are strictly not allowed inside the computer labs.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 3. Certification & Projects -->
+            <section class="certification">
+                <h2>3. Project Work & Certification</h2>
+                <p>The certificate is not guaranteed; it is earned based on performance.</p>
+                <ul>
+                    <li><strong>Daily Tasks:</strong> Completion of daily practical assignments is required.</li>
+                    <li><strong>Major Project:</strong> Submission of a Live Project at the end of the tenure is
+                        mandatory for the "Industrial Training" certificate.</li>
+                    <li><strong>Exit Test:</strong> A passing score of 60% in the final theory and practical exam is
+                        required.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Fees (Reusing the 'refund-policy' class for the specific styling) -->
             <section class="refund-policy">
-                <h2>Refund Policy</h2>
-                <p>All fees for online courses, training programs, software development, and digital services are
-                    non-refundable once the service or batch has started.</p>
+                <h2>4. Fees & Refund Policy</h2>
+                <p>Please read the financial terms carefully before enrollment.</p>
                 <ul>
-                    <li>Training & Internship Programs: No refund after batch starts, but support/doubt sessions
-                        available.</li>
-                    <li>Custom Website/App/Software: No refund after project initiation. Fixes/revisions provided as
-                        agreed.</li>
-                    <li>Digital Services: SEO, Ads, Hosting services not refundable after work starts. Progress updates
-                        provided.</li>
-                    <li>Digital Products: Instant delivery items are non-refundable.</li>
+                    <li><strong>Registration Fee:</strong> The seat booking/registration amount is strictly
+                        <strong>Non-Refundable</strong>.
+                    </li>
+                    <li><strong>Tuition Fee:</strong> Remaining fees must be cleared within the first 7 days of batch
+                        commencement.</li>
+                    <li><strong>Dropouts:</strong> No refund will be provided if a student leaves the course midway due
+                        to personal reasons.</li>
+                    <li><strong>Batch Transfer:</strong> Batch timing changes are subject to availability and management
+                        approval.</li>
                 </ul>
-            </section>
-
-            <section class="support">
-                <h2>Support</h2>
-                <p>If you face any issue, we provide call, WhatsApp, and email support.</p>
-                <p>📞 +91 85448 84846 | ✉️ contact@techengineer.co</p>
             </section>
 
             <section class="contact-us">
-                <h2>Contact Us</h2>
+                <h2>Student Grievance Cell</h2>
+                <p>For issues regarding trainers, batch timings, or certification:</p>
                 <address>
-                    Tech Engineer, 4th Floor, R&R Tower, Plot F-298, Phase 8B, Mohali, Punjab, India
+                    <strong>Admin Office:</strong> Tech Engineer, 4th Floor, R&R Tower, Mohali<br>
+                    <strong>Helpline:</strong> +91 85448 84846 (10 AM - 6 PM)
                 </address>
             </section>
         </div>
 
-        <!-- Right Column: News & Gallery -->
+        <!-- Right Column: Sidebar -->
         <aside class="terms-sidebar">
+            <!-- New sidebar content specific to Students -->
             <section class="news-events">
-                <h3>News & Events</h3>
+                <h3>Student Notice Board</h3>
                 <ul>
-                    <li>Industrial/Winter Training 2025 - Registration Open</li>
-                    <li>Training for Snow & Avalanche Study Establishment, DRDO</li>
-                    <li>Seminar/Workshop Proposals for Cyber Security, Cloud Computing</li>
+                    <li>🔴 <strong>Important:</strong> Final Project Submission deadline is 25th of this month.</li>
+                    <li>Upcoming Placement Drive: Wipro & HCL (Fresher Hiring)</li>
+                    <li>Holiday Notice: Institute remains closed on 26th Jan.</li>
                 </ul>
             </section>
 
             <section class="photo-gallery">
-                <h3>Photo Gallery</h3>
-                <img src="images/2025-06-03.webp" alt="Gallery Image 1">
-                <img src="images/2025-07-17.webp" alt="Gallery Image 2">
+                <h3>Campus Life</h3>
+                <!-- Replace with your actual image paths -->
+                <img src="images/gallery/2025-11-19 (1).webp" alt="Students in Lab">
+                <img src="images/gallery/AF1QipMpLw87OYR5iTIL0X-A7-buQz_X.webp" alt="Certification Day">
             </section>
 
-            <section class="partners">
-                <h3>Our Partners</h3>
-                <img src="images/host.png" alt="Partner 1">
-            </section>
+
         </aside>
     </div>
     <footer class="footer-section">
@@ -249,7 +394,7 @@
                     </a>
 
                 </div>
-                
+
                 <!-- COLUMN 2: Quick Links (Split) -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white fw-bold mb-3">Quick Links</h5>
@@ -314,12 +459,12 @@
 
                     <!-- Social Icons (Placed here to fit the layout) -->
                     <div class="social-icons">
-                        <a href="http://www.facebook.com/people/TechEngineer/100083472395433/" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="http://www.youtube.com/@TechEngineerProgramming" target="_blank" aria-label="YouTube"><i
-                                class="fab fa-youtube"></i></a>
-                        <a href="http://www.linkedin.com/company/tech-eng-ineer/" target="_blank" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a href="http://www.facebook.com/people/TechEngineer/100083472395433/" target="_blank"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="http://www.youtube.com/@TechEngineerProgramming" target="_blank"
+                            aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="http://www.linkedin.com/company/tech-eng-ineer/" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="http://www.instagram.com/tech___engineer" target="_blank" aria-label="Instagram"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
@@ -340,9 +485,10 @@
         </div>
 
         <!-- Buttons -->
-        <button id="backToTop" onclick="scrollToTop()">&#8679;</button>
-<button id="btn-call" onclick="clicktocall()"></button>
-<button id="btn-wht" onclick="clicktowhatsapp()"></button>
+        <button id="backToTop" onclick="scrollToTop()" title="Back to Top">&#8679;</button>
+        <button id="btn-call" onclick="clicktocall()" title="Call Us"><i class="fas fa-phone-alt"></i></button>
+        <button id="btn-wht" onclick="clicktowhatsapp()" aria-label="Chat on WhatsApp"><i
+                class="fab fa-whatsapp"></i></button>
 
     </footer>
 
